@@ -1,0 +1,122 @@
+{
+  "name": "phaser-boilerplate",
+  "version": "0.0.1",
+  "author": "GoldFire Studios, Inc. (http://goldfirestudios.com)",
+  "description": "Phaser.js Game Boilerplate",
+  "contributors": [
+    {
+      "name": "James Simpson",
+      "email": "james@goldfirestudios.com"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "http-server -c-1 -s -p 7777",
+    "build": "run-s build:**",
+    "build:phaser": "cd node_modules/phaser-ce; npm i; grunt custom --exclude bitmaptext,retrofont,net,sound,ninja,p2,creature,video --split true",
+    "build:webpack": "rimraf dist && webpack --config build/webpack.config.js --progress --hide-modules"
+  },
+  "dependencies": {
+    "phaser-ce": "2.7.5",
+    "howler": "2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "~3.18.0",
+    "eslint-config-airbnb-base": "11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-html": "^2.0.1",
+    "eslint-plugin-jsdoc": "^3.0.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "2.3.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-hot-middleware": "^2.17.1",
+    "buble": "~0.15.2",
+    "buble-loader": "~0.4.1",
+    "url-loader": "0.5.8",
+    "expose-loader": "0.7.3",
+    "extract-text-webpack-plugin": "2.1.0",
+    "css-loader": "*",
+    "style-loader": "*",
+    "rimraf": "^2.6.1",
+    "http-server": "*",
+    "npm-run-all": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "eslintConfig": {
+    "plugins": ["html", "jsdoc"],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "Phaser": true
+    },
+    "extends": "airbnb-base",
+    "rules": {
+      "import/no-extraneous-dependencies": ["warn", {
+        "devDependencies": true
+      }],
+      "complexity": ["warn", 20],
+      "curly": ["warn", "all"],
+      "dot-location": ["warn", "property"],
+      "dot-notation": "warn",
+      "eqeqeq": ["warn", "always"],
+      "no-multi-spaces": "warn",
+      "array-bracket-spacing": ["error", "never"],
+      "block-spacing": ["error", "always"],
+      "brace-style": ["error", "1tbs"],
+      "camelcase": ["warn", {"properties": "always"}],
+      "comma-spacing": ["warn", {"after": true}],
+      "comma-style": ["warn", "last"],
+      "computed-property-spacing": ["warn", "never"],
+      "consistent-this": ["error", "self"],
+      "func-call-spacing": ["error", "never"],
+      "keyword-spacing": ["warn", {"after": true}],
+      "max-depth": ["warn", {"max": 4}],
+      "max-len": ["warn", {
+          "code": 100,
+          "ignoreTrailingComments": true,
+          "ignoreUrls": true
+      }],
+      "max-nested-callbacks": ["warn", {"max": 5}],
+      "no-multiple-empty-lines": ["warn", {"max": 2}],
+      "no-trailing-spaces": ["error", {"skipBlankLines": false}],
+      "no-unneeded-ternary": ["warn", {"defaultAssignment": true}],
+      "no-whitespace-before-property": "error",
+      "object-curly-spacing": ["warn", "never"],
+      "require-jsdoc": ["error", {
+          "require": {
+              "FunctionDeclaration": true,
+              "MethodDefinition": true,
+              "ClassDeclaration": true
+          }
+      }],
+      "spaced-comment": ["error", "always", {
+          "line": {
+              "markers": ["/"],
+              "exceptions": ["-", "+"]
+          },
+          "block": {
+              "markers": ["!"],
+              "exceptions": ["*"],
+              "balanced": true
+          }
+      }],
+      "semi-spacing": ["error", {"before": false, "after": true}],
+      "space-before-function-paren": ["error", "never"],
+      "space-in-parens": ["error", "never"],
+      "no-param-reassign": 0,
+      "jsdoc/check-param-names": 1,
+      "jsdoc/check-tag-names": 1,
+      "jsdoc/newline-after-description": ["warn", "never"],
+      "jsdoc/require-description-complete-sentence": 1,
+      "jsdoc/require-param": 1,
+      "jsdoc/require-param-type": 1,
+      "jsdoc/require-returns-type": 1,
+      "no-underscore-dangle": 0,
+      "arrow-body-style": 0
+    }
+  }
+}

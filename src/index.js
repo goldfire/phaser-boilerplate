@@ -1,10 +1,11 @@
-import 'pixi';
-import Phaser from 'phaser';
 import {Howl, Howler} from 'howler';
 import Boot from './states/Boot';
 import Preload from './states/Preload';
 import Main from './states/Main';
 
+/**
+ * Setup the root class for the whole game.
+ */
 class Game extends Phaser.Game {
   constructor() {
     // Setup the game's stage.
@@ -22,4 +23,4 @@ class Game extends Phaser.Game {
   }
 }
 
-const game = new Game();
+new Game();

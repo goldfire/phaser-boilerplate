@@ -19,7 +19,7 @@ This is a basic boilerplate to get up and running with a custom build of Phaser 
 
 5. Access your project in the browser:
 
-`http://locahost:7777/dist/`
+`locahost:7777`
 
 6. ???
 
@@ -27,9 +27,9 @@ This is a basic boilerplate to get up and running with a custom build of Phaser 
 
 ## TODO
 - [x] Get livereload working with local dev.
+- [x] Clean up ESLint setup.
 - [ ] Setup basic node server boilerplate.
 - [ ] Streamline local development setup.
 - [ ] Add support for PostCSS to Webpack config.
 - [ ] Create separate dev and prod builds.
-- [ ] Clean up ESLint setup.
 - [ ] Clean up the README.

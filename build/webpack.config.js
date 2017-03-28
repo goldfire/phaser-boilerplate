@@ -16,7 +16,11 @@ module.exports = {
     hints: false,
   },
   entry: {
-    app: './src/index.js',
+    app: [
+      'pixi',
+      'phaser',
+      './src/index.js',
+    ],
     vendor: [
       'pixi',
       'phaser',

@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // Add support for Phaser webpack build.
 const phaserModule = path.join(__dirname, '../node_modules/phaser-ce/dist/');
@@ -10,6 +11,7 @@ const pixi = path.join(phaserModule, 'pixi.js');
 
 module.exports = {
   devtool: '#source-map',
+  watch: true,
   performance: {
     hints: false,
   },
@@ -97,6 +99,14 @@ module.exports = {
       compress: {
         screw_ie8: true,
         warnings: false,
+      },
+    }),
+    // Setup live-reloading in the browser with BrowserSync.
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 7777,
+      server: {
+        baseDir: ['./', './dist'],
       },
     }),
   ],

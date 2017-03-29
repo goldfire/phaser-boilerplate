@@ -28,8 +28,8 @@ This is a basic boilerplate to get up and running with a custom build of Phaser 
 ## TODO
 - [x] Get livereload working with local dev.
 - [x] Clean up ESLint setup.
-- [ ] Setup basic node server boilerplate.
-- [ ] Streamline local development setup.
+- [x] Setup basic node server boilerplate.
+- [x] Streamline local development setup.
 - [x] Add support for PostCSS to Webpack config.
 - [ ] Create separate dev and prod builds.
 - [ ] Clean up the README.

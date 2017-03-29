@@ -11,7 +11,8 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "run-s build:**",
+    "dev": "run-s dev:**",
+    "dev:server": "cross-env NODE_ENV=development PORT=7788 node server",
     "dev:phaser": "cd node_modules/phaser-ce; npm i; grunt custom --exclude bitmaptext,retrofont,net,sound,ninja,p2,creature,video --split true",
     "dev:serve": "webpack --config build/webpack.config.js --progress --hide-modules",
     "build": "run-s build:**",
@@ -23,6 +24,7 @@
     "howler": "2.0.3"
   },
   "devDependencies": {
+    "winston": "2.3.1",
     "eslint": "3.18.0",
     "eslint-config-airbnb-base": "11.1.2",
     "eslint-plugin-import": "2.2.0",
@@ -42,6 +44,7 @@
     "postcss-css-variables": "0.7.0",
     "postcss-import": "9.1.0",
     "autoprefixer": "6.7.7",
+    "cross-env": "3.2.4",
     "rimraf": "2.6.1",
     "npm-run-all": "4.0.2"
   },

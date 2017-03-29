@@ -30,6 +30,6 @@ This is a basic boilerplate to get up and running with a custom build of Phaser 
 - [x] Clean up ESLint setup.
 - [ ] Setup basic node server boilerplate.
 - [ ] Streamline local development setup.
-- [ ] Add support for PostCSS to Webpack config.
+- [x] Add support for PostCSS to Webpack config.
 - [ ] Create separate dev and prod builds.
 - [ ] Clean up the README.

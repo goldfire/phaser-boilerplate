@@ -16,9 +16,11 @@ export default class Main extends Phaser.State {
 
     // Add the player.
     new Player({
-      x: 50,
-      y: 50,
-      tex: 49, // enemyBlack1
+      x: this.game.width / 2,
+      y: this.game.height / 2,
+      shipTex: 49, // enemyBlack1
+      bulletTex: 110, // one of the blue lasers
+      thrusterTex: 88, // one of the fire things?
       game: this.game
     });
   }

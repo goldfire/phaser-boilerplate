@@ -9,9 +9,13 @@ const phaserModule = path.join(__dirname, '../node_modules/phaser-ce/dist/');
 const phaser = path.join(phaserModule, 'phaser.js');
 const pixi = path.join(phaserModule, 'pixi.js');
 
-module.exports = {
-  devtool: '#source-map',
-  watch: true,
+// Determine if this is a production build or not.
+const isProd = process.env.NODE_ENV === 'production';
+
+// Define the Webpack config.
+const config = {
+  devtool: isProd ? false : '#source-map',
+  watch: !isProd,
   performance: {
     hints: false,
   },
@@ -94,23 +98,33 @@ module.exports = {
     new HTMLPlugin({
       template: './src/index.template.html',
     }),
-    // Run the bundle through Uglify.
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-      },
-    }),
-    // Setup live-reloading in the browser with BrowserSync.
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 7777,
-      server: {
-        baseDir: ['./', './dist'],
-      },
-    }),
   ],
 };
+
+// Define production-only plugins.
+if (isProd) {
+  // Run the bundle through Uglify.
+  config.plugins.push(new webpack.LoaderOptionsPlugin({
+    minimize: true,
+  }));
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      screw_ie8: true,
+      warnings: false,
+    },
+  }));
+}
+
+// Define development-only plugins.
+if (!isProd) {
+  // Setup live-reloading in the browser with BrowserSync.
+  config.plugins.push(new BrowserSyncPlugin({
+    host: 'localhost',
+    port: 7777,
+    server: {
+      baseDir: ['./', './dist'],
+    },
+  }));
+}
+
+module.exports = config;

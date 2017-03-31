@@ -1,6 +1,5 @@
 # Phaser ES6 Boilerplate
 
-## How to use
 This is an ES6-based boilerplate for creating a multiplayer game using Phaser and Webpack. It is very opinionated as it strips out various unneeded components from Phaser and uses howler.js rather than Phaser Audio.
 
 The purpose of this repo is to be a starting point for creating a game. The idea is to copy the contents and then modify from there. Look at the usage below for instructions on how it all works.

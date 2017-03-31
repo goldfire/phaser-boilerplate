@@ -1,35 +1,34 @@
-# Phaser.js Game Boilerplate
+# Phaser ES6 Boilerplate
 
 ## How to use
-This is a basic boilerplate to get up and running with a custom build of Phaser using ES6 and Webpack.
+This is an ES6-based boilerplate for creating a multiplayer game using Phaser and Webpack. It is very opinionated as it strips out various unneeded components from Phaser and uses howler.js rather than Phaser Audio.
 
-1. Clone the git repo.
+The purpose of this repo is to be a starting point for creating a game. The idea is to copy the contents and then modify from there. Look at the usage below for instructions on how it all works.
 
-2. Install the dependencies:
+## Features
+* Phaser-CE 2.7.5 through npm (automatic custom build).
+* Boilerplate written in ES6 class structure.
+* Heavily commented and stripped down for most minimal build.
+* [Webpack](https://webpack.js.org/) + [Bublé](https://buble.surge.sh/guide/) + [PostCSS](http://postcss.org/).
+* [BrowserSync](https://browsersync.io/) for livereload during development.
+* Separate builds for production and development.
+
+## Usage
+
+Clone the git repo.
+
+`git@github.com:goldfire/phaser-boilerplate.git`
+
+Install the dependencies.
 
 `npm i`
 
-3. Build the project:
-
-`npm run build`
-
-4. Start the development web server:
+Start the development web server.
 
 `npm run dev`
 
-5. Access your project in the browser:
+Access your project in the browser.
 
 `locahost:7777`
 
-6. ???
-
-7. Profit!
-
-## TODO
-- [x] Get livereload working with local dev.
-- [x] Clean up ESLint setup.
-- [x] Setup basic node server boilerplate.
-- [x] Streamline local development setup.
-- [x] Add support for PostCSS to Webpack config.
-- [ ] Create separate dev and prod builds.
-- [ ] Clean up the README.
+Then start building your game!

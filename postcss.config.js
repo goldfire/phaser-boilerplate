@@ -3,5 +3,6 @@ module.exports = {
     'postcss-import': {},
     'postcss-css-variables': {},
     autoprefixer: {},
+    cssnano: {},
   },
 };

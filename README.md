@@ -10,6 +10,7 @@ The purpose of this repo is to be a starting point for creating a game. The idea
 * Heavily commented and stripped down for most minimal build.
 * [Webpack](https://webpack.js.org/) + [Bublé](https://buble.surge.sh/guide/) + [PostCSS](http://postcss.org/).
 * [BrowserSync](https://browsersync.io/) for livereload during development.
+* [Stats.js](https://github.com/mrdoob/stats.js/) for displaying FPS/MS.
 * Separate builds for production and development.
 
 ## Usage

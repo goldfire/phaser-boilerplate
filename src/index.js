@@ -23,7 +23,9 @@ class Game extends Phaser.Game {
     this.state.start('Boot');
 
     // Handle debug mode.
-    this.setupStats();
+    if (process.env.NODE_ENV === 'development') {
+      this.setupStats();
+    }
   }
 
   /**

@@ -86,7 +86,6 @@ const config = {
     // Pass environment variables to bundle.
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-      'process.env.VUE_ENV': '"client"',
     }),
     // Extract vendor chunks for better caching.
     new webpack.optimize.CommonsChunkPlugin({

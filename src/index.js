@@ -1,4 +1,5 @@
 import {Howl, Howler} from 'howler';
+import Stats from 'stats.js';
 import Boot from './states/Boot';
 import Preload from './states/Preload';
 import Main from './states/Main';
@@ -20,7 +21,28 @@ class Game extends Phaser.Game {
 
     // Kick things off with the boot state.
     this.state.start('Boot');
+
+    // Handle debug mode.
+    this.setupStats();
+  }
+
+  /**
+   * Display the FPS and MS using Stats.js.
+   */
+  setupStats() {
+    // Setup the new stats panel.
+    const stats = new Stats();
+    document.body.appendChild(stats.dom);
+
+    // Monkey-patch the update loop so we can track the timing.
+    const updateLoop = this.update;
+    this.update = (...args) => {
+      stats.begin();
+      updateLoop.apply(this, args);
+      stats.end();
+    };
   }
 }
 
 new Game();
+

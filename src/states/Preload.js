@@ -1,4 +1,4 @@
-import ManifestLoader from 'phaser-manifest-loader/src';
+import WebpackLoader from 'phaser-webpack-loader';
 import AssetManifest from '../AssetManifest';
 
 /**
@@ -9,8 +9,8 @@ export default class Preload extends Phaser.State {
    * Once loading is complete, switch to the main state.
    */
   create() {
-    this.game.plugins.add(ManifestLoader)
-      .loadManifest(AssetManifest)
+    this.game.plugins.add(WebpackLoader, AssetManifest)
+      .load()
       .then(() => {
         this.game.state.start('Main');
       });

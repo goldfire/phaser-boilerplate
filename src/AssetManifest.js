@@ -1,4 +1,5 @@
 const AssetManifest = {
+  baseDir: 'src/assets/',
   spritesheets: [],
   bitmap_fonts: [],
   images: [],

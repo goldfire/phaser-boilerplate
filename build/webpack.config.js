@@ -21,14 +21,13 @@ const config = {
   },
   entry: {
     app: [
-      'pixi',
-      'phaser',
       './src/index.js',
     ],
     vendor: [
       'pixi',
       'phaser',
       'howler',
+      'webfontloader',
     ],
     style: './src/assets/css/index.css',
   },
@@ -41,6 +40,7 @@ const config = {
     alias: {
       phaser,
       pixi,
+      assets: path.join(__dirname, '../src/assets'),
     },
   },
   node: {
@@ -53,7 +53,7 @@ const config = {
       {
         test: /\.js$/,
         loader: 'buble-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!phaser-webpack-loader)/,
         options: {
           objectAssign: 'Object.assign',
         },
@@ -68,11 +68,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: '[name].[ext]?[hash]',
-        },
+        use: ['file-loader?name=[name].[hash].[ext]'],
       },
       {
         test: /\.css$/,

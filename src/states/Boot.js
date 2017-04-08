@@ -14,7 +14,7 @@ export default class Boot extends Phaser.State {
    */
   create() {
     // Scale the game to fill the entire page.
-    this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
 
     // Move on to the preload state.
     this.game.state.start('Preload');

@@ -3,6 +3,7 @@ import Stats from 'stats.js';
 import Boot from './states/Boot';
 import Preload from './states/Preload';
 import Main from './states/Main';
+import './assets/css/index.css';
 
 /**
  * Setup the root class for the whole game.
@@ -10,9 +11,13 @@ import Main from './states/Main';
 class Game extends Phaser.Game {
   constructor() {
     // Setup the game's stage.
-    const width = window.innerWidth * window.devicePixelRatio;
-    const height = window.innerHeight * window.devicePixelRatio;
-    super(width, height, Phaser.AUTO);
+    super({
+      width: window.innerWidth * window.devicePixelRatio,
+      height: window.innerHeight * window.devicePixelRatio,
+      renderer: Phaser.WEBGL_MULTI,
+      antialias: true,
+      multiTexture: true,
+    });
 
     // Setup the different game states.
     this.state.add('Boot', Boot, false);

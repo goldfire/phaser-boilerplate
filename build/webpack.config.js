@@ -29,12 +29,11 @@ const config = {
       'howler',
       'webfontloader',
     ],
-    style: './src/assets/css/index.css',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: '[name].[chunkhash].js',
+    filename: '[name].js?[chunkhash]',
   },
   resolve: {
     alias: {
@@ -68,7 +67,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader?name=[name].[hash].[ext]'],
+        use: ['file-loader?name=[name].[ext]?[hash]'],
       },
       {
         test: /\.css$/,
@@ -88,7 +87,7 @@ const config = {
       name: 'vendor',
     }),
     // Extract the CSS file.
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('styles.css?[contenthash]'),
     // Generate output HTML.
     new HTMLPlugin({
       template: './src/index.template.html',

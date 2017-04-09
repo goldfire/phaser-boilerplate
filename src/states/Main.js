@@ -10,6 +10,16 @@ export default class Main extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
     // ...
+
+    // Setup listener for window resize.
+    this.scale.setResizeCallback(this.resize, this);
+  }
+
+  /**
+   * Resize the game to fit the window.
+   */
+  resize() {
+    this.scale.setGameSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio);
   }
 
   /**

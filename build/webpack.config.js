@@ -67,7 +67,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader?name=[name].[ext]?[hash]'],
+        use: ['file-loader?name=assets/[name].[ext]?[hash]'],
       },
       {
         test: /\.css$/,

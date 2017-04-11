@@ -17,6 +17,7 @@ class Game extends Phaser.Game {
       renderer: Phaser.WEBGL_MULTI,
       antialias: true,
       multiTexture: true,
+      enableDebug: process.env.NODE_ENV === 'development',
     });
 
     // Setup the different game states.

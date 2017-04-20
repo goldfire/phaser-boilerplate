@@ -20,7 +20,7 @@
     "build:webpack": "rimraf dist && cross-env NODE_ENV=production webpack --config build/webpack.config.js --progress --hide-modules"
   },
   "dependencies": {
-    "phaser-ce": "2.7.6",
+    "phaser-ce": "2.7.7",
     "phaser-webpack-loader": "1.0.0",
     "winston": "2.3.1",
     "howler": "2.0.3",

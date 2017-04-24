@@ -1,7 +1,10 @@
 const AssetManifest = {
-  sprites: [],
-  bitmapFonts: [],
-  images: [],
+  sprites: [
+    'textures.png',
+  ],
+  images: [
+    'bg.png',
+  ],
   fonts: {
     google: {
       families: [

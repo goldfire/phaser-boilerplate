@@ -1,4 +1,5 @@
 import throttle from 'lodash.throttle';
+import Player from '../objects/Player';
 
 /**
  * Setup and display the main game state.
@@ -10,6 +11,18 @@ export default class Main extends Phaser.State {
   create() {
     // Enable arcade physics.
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    // Add background tile.
+    this.game.add.tileSprite(-5000, -5000, 10000, 10000, 'bg');
+
+    // Add a player to the game.
+    this.player = new Player({
+      game: this.game,
+      x: this.game.world.centerX,
+      y: this.game.world.centerY,
+      key: 'textures',
+      frame: 'ship',
+    });
 
     // ...
 

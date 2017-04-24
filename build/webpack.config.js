@@ -66,7 +66,7 @@ const config = {
         use: ['expose-loader?Phaser'],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|pvr|pkm)$/,
         use: ['file-loader?name=assets/[name].[ext]?[hash]'],
       },
       {

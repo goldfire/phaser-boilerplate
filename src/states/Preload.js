@@ -17,6 +17,9 @@ export default class Preload extends Phaser.State {
       postfix = '@2x';
     }
 
+    // Fix CORS issues with the loader.
+    this.game.load.crossOrigin = 'anonymous';
+
     // Begin loading all of the assets.
     this.game.plugins.add(WebpackLoader, AssetManifest, postfix)
       .load()

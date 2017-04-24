@@ -7,5 +7,6 @@ export default class Player extends Phaser.Sprite {
 
     // Add the sprite to the game.
     this.game.add.existing(this);
+    this.anchor.setTo(0.5);
   }
 }

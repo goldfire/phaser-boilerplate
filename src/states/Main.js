@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle';
+
 /**
  * Setup and display the main game state.
  */
@@ -12,14 +14,17 @@ export default class Main extends Phaser.State {
     // ...
 
     // Setup listener for window resize.
-    this.scale.setResizeCallback(this.resize, this);
+    window.addEventListener('resize', throttle(this.resize.bind(this), 50), false);
   }
 
   /**
    * Resize the game to fit the window.
    */
   resize() {
-    this.scale.setGameSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio);
+    const width = window.innerWidth * window.devicePixelRatio;
+    const height = window.innerHeight * window.devicePixelRatio;
+
+    this.scale.setGameSize(width, height);
   }
 
   /**

@@ -17,8 +17,9 @@ export default class Preload extends Phaser.State {
       postfix = '@2x';
     }
 
-    // Fix CORS issues with the loader.
+    // Fix CORS issues with the loader and allow for unlimited parallel downloads.
     this.game.load.crossOrigin = 'anonymous';
+    this.game.load.maxParallelDownloads = Infinity;
 
     // Begin loading all of the assets.
     this.game.plugins.add(WebpackLoader, AssetManifest, postfix)

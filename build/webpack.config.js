@@ -78,6 +78,8 @@ const config = {
     ],
   },
   plugins: [
+    // Use hoisting.
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // Pass environment variables to bundle.
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),

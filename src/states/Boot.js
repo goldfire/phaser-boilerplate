@@ -22,6 +22,9 @@ export default class Boot extends Phaser.State {
     // Disable clearing the canvas on each tick (usually not needed).
     this.game.clearBeforeRender = false;
 
+    // Disable right click.
+    this.game.canvas.oncontextmenu = e => e.preventDefault();
+
     // Move on to the preload state.
     this.game.state.start('Preload');
   }

@@ -1,3 +1,4 @@
+import 'core-js/shim';
 import {Howl, Howler} from 'howler';
 import Stats from 'stats.js';
 import Boot from './states/Boot';

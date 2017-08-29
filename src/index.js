@@ -10,11 +10,17 @@ import './assets/css/index.css';
  * Setup the root class for the whole game.
  */
 class Game extends Phaser.Game {
+  /**
+   * Initialize the game before preloading assets.
+   */
   constructor() {
+    // Round the pixel ratio to the nearest whole number so everything scales correctly.
+    const dpr = Math.round(window.devicePixelRatio);
+
     // Setup the game's stage.
     super({
-      width: window.innerWidth * window.devicePixelRatio,
-      height: window.innerHeight * window.devicePixelRatio,
+      width: window.innerWidth * dpr,
+      height: window.innerHeight * dpr,
       renderer: Phaser.WEBGL_MULTI,
       antialias: true,
       multiTexture: true,
@@ -32,6 +38,11 @@ class Game extends Phaser.Game {
     // Handle debug mode.
     if (process.env.NODE_ENV === 'development') {
       this.setupStats();
+    }
+
+    // Expose the game on the window if in dev/test.
+    if (process.env.NODE_ENV !== 'production') {
+      window.game = this;
     }
   }
 
@@ -54,4 +65,3 @@ class Game extends Phaser.Game {
 }
 
 new Game();
-

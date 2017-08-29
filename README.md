@@ -5,7 +5,7 @@ This is an ES6-based boilerplate for creating a multiplayer game using Phaser an
 The purpose of this repo is to be a starting point for creating a game. The idea is to copy the contents and then modify from there. Look at the usage below for instructions on how it all works.
 
 ## Features
-* [Phaser-CE 2.7.5](https://github.com/photonstorm/phaser-ce) through npm (automatic custom build).
+* [Phaser-CE](https://github.com/photonstorm/phaser-ce) through npm (automatic custom build).
 * Boilerplate written in ES6 class structure.
 * Heavily commented and stripped down for most minimal build.
 * [Webpack](https://webpack.js.org/) + [Bublé](https://buble.surge.sh/guide/) + [PostCSS](http://postcss.org/).
